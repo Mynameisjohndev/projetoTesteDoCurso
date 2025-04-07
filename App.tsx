@@ -1,5 +1,6 @@
 import {SafeAreaView, StatusBar} from 'react-native';
-import Routes from './src/routes/index.route';
+import Routes from './src/routes/index.routes';
+import './gesture-handler';
 
 const App = () => {
   return (
