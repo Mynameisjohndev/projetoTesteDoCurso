@@ -1,5 +1,5 @@
 import {SafeAreaView, StatusBar} from 'react-native';
-import Welcome from './src/screens/Welcome';
+import Routes from './src/routes/index.route';
 
 const App = () => {
   return (
@@ -8,7 +8,7 @@ const App = () => {
         flex: 1,
       }}>
       <StatusBar barStyle={'light-content'} hidden/>
-      <Welcome />
+      <Routes />
     </SafeAreaView>
   );
 };
