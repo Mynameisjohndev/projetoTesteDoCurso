@@ -1,11 +1,12 @@
-import {Image} from 'react-native';
-import image from '../../assets/imgs/image.png';
+import Image from '../../assets/svgs/ilustratation.svg';
+// import Home from '../../assets/svgs/home.svg';
 import { Button, Container, Content, SubTitle, TextButton, Title } from './styles';
 
 const Welcome = () => {
   return (
     <Container>
-      <Image source={image} />
+      <Image width={300} height={300}/>
+      {/* <Home width={300} height={300} fill={'red'} /> */}
       <Content>
         <Title>BEM-VINDO</Title>
         <SubTitle>
