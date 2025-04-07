@@ -1,8 +1,11 @@
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import {Button, Container, Content, TextButton, Title} from './styles';
 
 const Home = () => {
   const {navigate, goBack} = useNavigation();
+  const {params} = useRoute();
+
+  console.log(params);
 
   return (
     <Container>

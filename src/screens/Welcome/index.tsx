@@ -17,7 +17,12 @@ const Welcome = () => {
           Para aprender mais, continue assistindo as aulas e praticando para
           aprender todo conteúdo!
         </SubTitle>
-        <Button onPress={()=>navigate('home')}>
+        <Button onPress={()=>navigate('home', {
+          user: {
+            name: 'João Antônio',
+            age: '25',
+          },
+        })}>
           <TextButton>VAMOS LÁ</TextButton>
         </Button>
       </Content>
