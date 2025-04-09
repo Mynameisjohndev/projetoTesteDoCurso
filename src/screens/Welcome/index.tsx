@@ -21,7 +21,7 @@ const Welcome: React.FC<AppScreenProps<'welcome'>> = ({navigation}) => {
         <Button onPress={()=>navigate('home', {
           user: {
             name: 'João Antônio',
-            // age: '25',
+            age: '25',
           },
         })}>
           <TextButton>VAMOS LÁ</TextButton>
