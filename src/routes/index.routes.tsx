@@ -1,14 +1,16 @@
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+// import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import Welcome from '../screens/Welcome';
 import Home from '../screens/Home';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+// import {createDrawerNavigator} from '@react-navigation/drawer';
 import IcHome from '../assets/svgs/home.svg';
+import { AppRoutesTypes } from '../types/navigation';
 
-const Stack = createNativeStackNavigator();
-const Tabs = createBottomTabNavigator();
-const Drawer = createDrawerNavigator();
+// const Stack = createNativeStackNavigator();
+const Tabs = createBottomTabNavigator<AppRoutesTypes>();
+// const Drawer = createDrawerNavigator();
 
 const Routes = () => {
   const user = true;

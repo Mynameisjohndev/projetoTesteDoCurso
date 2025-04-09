@@ -1,9 +1,9 @@
-import {useNavigation, useRoute} from '@react-navigation/native';
 import {Button, Container, Content, TextButton, Title} from './styles';
+import { AppScreenProps } from '../../types/navigation';
 
-const Home = () => {
-  const {navigate, goBack} = useNavigation();
-  const {params} = useRoute();
+const Home: React.FC<AppScreenProps<'home'>> = ({navigation, route}) => {
+  const {goBack} = navigation;
+  const {params} = route;
 
   console.log(params);
 

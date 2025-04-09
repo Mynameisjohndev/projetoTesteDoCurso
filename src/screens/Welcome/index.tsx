@@ -1,11 +1,12 @@
-import { useNavigation } from '@react-navigation/native';
 import Image from '../../assets/svgs/ilustratation.svg';
 // import Home from '../../assets/svgs/home.svg';
 import { Button, Container, Content, SubTitle, TextButton, Title } from './styles';
+import React from 'react';
+import { AppScreenProps } from '../../types/navigation';
 
-const Welcome = () => {
+const Welcome: React.FC<AppScreenProps<'welcome'>> = ({navigation}) => {
 
-  const {navigate} = useNavigation();
+  const {navigate} = navigation;
 
   return (
     <Container>
@@ -20,7 +21,7 @@ const Welcome = () => {
         <Button onPress={()=>navigate('home', {
           user: {
             name: 'João Antônio',
-            age: '25',
+            // age: '25',
           },
         })}>
           <TextButton>VAMOS LÁ</TextButton>
