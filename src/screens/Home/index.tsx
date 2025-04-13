@@ -2,22 +2,26 @@ import {Button, Container, Content, Input, TextButton} from './styles';
 import { AppScreenProps } from '../../types/navigation';
 import { useEffect, useRef } from 'react';
 import { TextInput } from 'react-native';
-import { useUserContext } from '../../context/userContext';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 const Home: React.FC<AppScreenProps<'home'>> = ({}) => {
 
   const inputRef = useRef<TextInput>(null);
-  const {setUser} = useUserContext();
 
   const handleClickButton = () => {
     inputRef.current?.focus();
   };
 
-  useEffect(()=>{
-    setUser({
+  const setStorageUser = () => {
+    const user = {
       age: '35',
       name: 'João Antônio',
-    });
-  },[setUser]);
+    };
+    AsyncStorage.setItem('@user', JSON.stringify(user));
+  };
+
+  useEffect(() => {
+    setStorageUser();
+  }, []);
 
   return (
     <Container>
