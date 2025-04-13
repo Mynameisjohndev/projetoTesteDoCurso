@@ -1,3 +1,4 @@
+import { TextInputProps } from 'react-native';
 import styled from 'styled-components/native';
 
 const Container = styled.SafeAreaView`
@@ -41,6 +42,15 @@ const TextButton = styled.Text`
   font-size: 20px;
 `;
 
+const Input = styled.TextInput.attrs<TextInputProps>({})`
+  color: #FFB701;
+  background-color: #CDCDCD;
+  font-size: 20px;
+  height: 60px;
+  width: 100%;
+  border-radius: 4px;
+`;
+
 
 export {
   Container,
@@ -49,4 +59,5 @@ export {
   SubTitle,
   Button,
   TextButton,
+  Input,
 };
