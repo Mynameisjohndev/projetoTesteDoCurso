@@ -10,23 +10,24 @@ import {
 } from './styles';
 import React, {useEffect} from 'react';
 import {AppScreenProps} from '../../types/navigation';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import api from '../../services/api';
 
 const Welcome: React.FC<AppScreenProps<'welcome'>> = ({navigation}) => {
   const {navigate} = navigation;
 
-  const getStorageUser = async () => {
-    const res = await AsyncStorage.getItem('@user');
-    if (res) {
-      const user = JSON.parse(res);
-      console.log(user);
-    }else{
-      console.log('Não possui usuário');
-    }
+  const getDogs = () => {
+    api
+      .get('/breeds/list/all')
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   useEffect(() => {
-    getStorageUser();
+    getDogs();
   }, []);
 
   return (
